@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+}
+
+#brandImg {
+    filter: drop-shadow(0px 1px 1px black);
+}
+
+.buttonActive {
+    border-radius: 20px;
+    /* font-weight: 600; */
+    font-size: 16px;
+    cursor: pointer;  
+    padding:6px 25px 8px;
+    background-color: transparent;
+    /* color: white;     */
+}
+
+.button {
+    padding:6px 25px 8px;
+    border-radius: 20px;
+    /* font-weight: 600; */
+    font-size: 16px;
+    cursor: pointer;  
+    color: white;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.form-box {
+    border: 2px ridge gray;
+    border-radius: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+
+input::placeholder {
+    transition-duration: 500ms;
+}
+
+input:focus::placeholder {
+    transform: translateX(-200px);
+}

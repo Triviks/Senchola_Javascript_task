@@ -1,0 +1,200 @@
+h1 {
+    font-family: Tahoma;
+    margin-left: 50px;
+}
+
+body {
+    background-color: rgba(124, 206, 233, 0.3);
+}
+
+.main {
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.head {
+    display: flex;
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    justify-content: space-between;
+}
+
+.box1 {
+    background-color: white;
+    width: 250px;
+    height: 200px;
+    padding: 30px;
+    box-shadow: 1px 3px 10px rgba(0,0,0,0.2);
+}
+
+.box12 {
+    height: 220px;
+}
+
+.box13 {
+    height: 240px;
+}
+
+.box14 {
+    height: 240px;
+}
+
+.txt .material-symbols-outlined {
+    vertical-align: -5px;
+    cursor: pointer;
+    max-height: 25px;
+    margin-top: 20px;
+}
+
+.txt .material-symbols-outlined:hover {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.txt {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: calibri;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 20px;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(0, 255, 255,0.3);
+    cursor: pointer;
+    transition-duration: 0.5s;
+    font-weight: bold;
+}
+
+.boxtxt {
+
+    font-size: 25px;
+    text-align: left;
+    font-family: calibri;
+}
+
+button:hover {
+    width: 110px;
+    height: 35px;
+    /* -webkit-box-reflect: below -2px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4)); */
+    box-shadow: 20px 20px 10px 10px rgba(255,255,255,1) inset;
+}
+
+img {
+    --s: 60px; /* image size */
+    --b: 2px; /* border thickness */
+    --c: #ae3ec9; /* border color */
+    --cb: #e9ecef; /* background color */
+    --f: 1; /* initial scale */
+    
+    width: var(--s);
+    aspect-ratio: 1;
+    padding-top: calc(var(--s)/5);
+    cursor: pointer;
+    border-radius: 0 0 999px 999px;
+    --_g: 50%/calc(100%/var(--f)) 100% no-repeat content-box;
+    --_o: calc((1/var(--f) - 1)*var(--s)/2 - var(--b));
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--_o);
+    background: 
+      radial-gradient(
+        circle closest-side,
+        var(--cb) calc(99% - var(--b)),var(--c) calc(100% - var(--b)) 99%,#0000
+       ) var(--_g);
+    -webkit-mask:
+      linear-gradient(#000 0 0) no-repeat
+       50% calc(1px - var(--_o)) / calc(100%/var(--f) - 2*var(--b) - 2px) 50%,
+      radial-gradient(circle closest-side,#000 99%,#0000) var(--_g);
+    transform: scale(var(--f));
+    transition: .5s;
+}
+  
+img:hover {
+    --f: 1.4; /* hover scale */
+}
+
+.image {
+    display: flex;
+}
+
+h1 {
+    margin-left: 0px;
+    margin-top: 15px;
+}
+
+.box2 {
+    background-color: white;
+    width: 250px;
+    height: 200px;
+    padding: 30px;
+    margin-top: -10px;
+    margin-top: -20px;
+    box-shadow: 1px 3px 10px rgba(0,0,0,0.2);
+}
+
+.box22 {
+    height: 220px;
+    margin-top: 0px;
+}
+
+.box23 {
+    height: 220px;
+    margin-top: 20px;
+}
+
+.box24 {
+    height: 240px;
+    margin-top: 20px;
+}
+
+.dates {
+    font-size: 13px;
+    color: grey;
+}
+
+.boxtxt .material-symbols-outlined {
+    vertical-align: -6px;
+    color: grey;
+    padding: 8px;
+}
+
+.boxtxt .cal1 {
+    margin-top: 10%;
+}
+
+.boxtxt .cal2 {
+    margin-top: 17%;
+}
+
+.boxtxt .cal3 {
+    margin-top: 25%;
+}
+
+.boxtxt .cal4 {
+    margin-top: 27%;
+}
+
+.boxtxt .cal5 {
+    margin-top: 10%;
+}
+
+.boxtxt .cal6 {
+    margin-top: 17%;
+}
+
+.boxtxt .cal7 {
+    margin-top: 18%;
+}
+
+.boxtxt .cal8 {
+    margin-top: 25%;
+}
+
+
+
+
+
