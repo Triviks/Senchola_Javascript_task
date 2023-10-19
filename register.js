@@ -7,11 +7,9 @@ prevent.addEventListener('click', (e) => {
 
 // ERROR DISPLAY
 let err = document.querySelector('.error');
-let nameErr = document.querySelector('.nameErr');
 let emailErr = document.querySelector('.emailErr');
-let branchErr = document.querySelector('.branchErr');
-let workidErr = document.querySelector('.workidErr');
-let deptErr = document.querySelector('.deptErr');
+let pwdErr = document.querySelector('.pwdErr');
+let cnfpwdErr = document.querySelector('.cnfpwdErr');
 
 
 function regValidate() {
@@ -22,8 +20,11 @@ function regValidate() {
     let mail = document.getElementById('email');
     let mailVal = mail.value;
 
-    let branch = document.getElementById('branch');
-    let branchVal = branch.options[branch.selectedIndex].value;
+    let pwd = document.getElementById('pwd');
+    let pwdVal = pwd.value;
+
+    let cnfpwd = document.getElementById('cnfpwd');
+    let cnfpwdVal = cnfpwd.value;
 
     let workid = document.getElementById('workid');
     let workidVal = workid.value;
@@ -34,9 +35,14 @@ function regValidate() {
     // REGEX TO VALIDATE MAIL AND NUMBER
     let emailRegex = /^[^\s@]+@[^\s@]+\.(?:com|in|net|org)$/; // MAIL VALIDATION - CORRECT MAIL FORMAT
 
+    // REGEX TO VALIDATE PASSWORD
+    let uppercaseRegex = /[A-Z]/; //  MUST HAVE AT LEAST ONE UPPERCASE CHARACTER FROM A-Z
+    let specialCharRegex = /[!@#$%^&*()]/; // MUST HAVE AT LEAST ONE SPECIAL CHARACTER
+    let minlengthRegex = /.{8,}/; // MUST HAVE MINIMUM LENGTH OF 8
+
     // VALIDATE EMPTY FIELDS
-    if (nameVal === '' || mailVal === '' || branchVal === '0' || workidVal === '' || deptVal === '0') {
-        err.innerText = "Please fill all the mandatory fields!";
+    if (nameVal === '' || mailVal === '' || pwdVal === '' || cnfpwd === '' ||workidVal === '' || deptVal === '0') {
+        err.innerText = "Please fill all the fields!";
         return false //PREVENT FORM SUBMISSION
     }
     
@@ -44,9 +50,8 @@ function regValidate() {
         err.innerText = "";
     }
     // console.log("Working");
-    
-    // VALIDATE EMAIL
-    if (nameVal !== '' || mailVal !== '' || branchVal !== '0' || workidVal !== '' || deptVal !== '0') {
+
+    if (nameVal !== '' || mailVal !== '' || pwdVal !== '' || cnfpwdVal !== '' || workidVal !== '' || deptVal !== '0') {
         // VALIDATE EMAIL
         if (!emailRegex.test(mailVal)) {
             mail.style.border = "2px solid red";
@@ -58,6 +63,37 @@ function regValidate() {
             mail.style.border = "";
             emailErr.innerText = "";
         }
+
+        // VALIDATE PASSWORD
+        switch (true) {
+        case !minlengthRegex.test(pwdVal):
+            pwd.style.border = '2px solid red';
+            pwdErr.innerText = "The password must have at least 8 characters!";
+            return false; // PREVENT FORM SUBMISSION
+        case !uppercaseRegex.test(pwdVal):
+            pwd.style.border = '2px solid red';
+            pwdErr.innerText = "The password must contain at least one uppercase character!";
+            return false; // PREVENT FORM SUBMISSION
+        case !specialCharRegex.test(pwdVal):
+            pwd.style.border = '2px solid red';
+            pwdErr.innerText = "The password must contain at least one special character in it!";
+            return false; // PREVENT FORM SUBMISSION
+        default:
+            pwdErr.innerText = '';
+            pwd.style.border = '1.8px solid white';
+}
+
+        //VALIDATE CONFIRM PASSWORD
+        if (pwdVal !== cnfpwdVal) {
+            cnfpwdErr.innerText = 'Passwords do not match';
+            cnfpwd.style.border = "2px solid red";
+            pwd.style.border = "2px solid red";
+            return false
+        }
     }
+
+
+    window.location.reload
     window.location.href = "Login.html";
+
 }
